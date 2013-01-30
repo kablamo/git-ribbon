@@ -1,0 +1,37 @@
+#!/usr/bin/env perl
+    
+use strict; 
+use warnings;
+    
+use Getopt::Long::Descriptive;
+use IO::Prompter;
+    
+my ($option, $usage) = describe_options(
+    'usage: git ribbon %o',
+    ['save|s=i'       => 'Save your place at origin/branch'],
+    ['help|h'         => 'Show this message'],
+);  
+    
+die($usage) if $option->{help};
+
+my @logs = `git log --pretty=format:'git difftool -r %p -r %h%n%h %an %cr %s' --name-only --no-merges --reverse --topo-order _ribbon..origin/master`;
+
+my $i = 0;
+while ($i < $#logs) {
+    my $cmd = $logs[$i];
+    $i++;
+
+    while ($logs[$i] !~ /^git difftool -r /) {
+        print $logs[$i];
+        $i++;
+        last if $i >= $#logs;
+    }
+
+    my $answer = prompt 'View the diff? ', -yn;
+
+    if ($answer =~ /y/i) {
+#        `$cmd`;
+print        $cmd;
+    }
+    print "\n";
+}
