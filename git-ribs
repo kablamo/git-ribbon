@@ -1,0 +1,14 @@
+#!/usr/bin/env perl
+    
+use strict; 
+use warnings;
+    
+use Getopt::Long::Descriptive;
+    
+my ($option, $usage) = describe_options(
+    'usage: git ribbon %o',
+    ['save|s=i'       => 'Save your place at origin/branch'],
+    ['help|h'         => 'Show this message'],
+);  
+    
+die($usage) if $option->{help};
