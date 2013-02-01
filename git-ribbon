@@ -14,7 +14,7 @@ my ($option, $usage) = describe_options(
     
 die($usage) if $option->{help};
 
-my @logs = `git log --pretty=format:'git difftool -r %p -r %h --no-prompt %n%h %an %cr %s' --name-only --no-merges --reverse --topo-order _ribbon..origin/master`;
+my @logs = `git log --pretty=format:'git difftool -r %p -r %h --no-prompt %n%C(bold white)%an %cr %h%n%s%Creset' --name-only --no-merges --reverse --topo-order _ribbon..origin/master`;
 
 my $i = 0;
 while ($i < $#logs) {
@@ -27,14 +27,17 @@ while ($i < $#logs) {
         last if $i >= $#logs;
     }
 
-    my $answer = prompt 'View the diff? ', -yn;
+    my $answer = prompt "press 's' to skip", -echo => "", -single;
 
-    if ($answer =~ /y/i) {
+    unless ($answer eq 's') {
         my $pid = fork();
         if (!$pid) { # child
             exec($cmd);
         }
         waitpid $pid, 0;
     }
+    
     print "\n";
 }
+
+END { print "\n" }
