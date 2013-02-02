@@ -63,13 +63,12 @@ For more, read 'git help difftool' and 'git help config'.
 The default colors for vimdiff were created by insane clowns.  So try this
 instead:
 
-    ⚡ mkdir ~/.vim
-    ⚡ mkdir ~/.vim/colors/
-    ⚡ cd ~/.vim/colors/
-    ⚡ wget FIXME
+    ⚡ mkdir -p ~/.vim/colors/
+    ⚡ wget https://github.com/kablamo/dotfiles/blob/master/links/.vim/colors/iijo.vim -O ~/tmp/iijo.vim
     ⚡ echo "colorscheme iijo" >> ~/.vimrc
 
-To quickly exit vimdiff type 'ZZ'.  For more help with vim type ':help'.
+To quickly exit vimdiff type 'ZZ'.  To open folds type 'zo'.  To switch windows
+type 'ctl-w l' and 'ctl-w h'.  For more help with vim type ':help'.
 
 See also
 --------
