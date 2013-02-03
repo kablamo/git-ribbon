@@ -60,15 +60,19 @@ In your .gitconfig add this:
     
 For more, read 'git help difftool' and 'git help config'.
 
-The default colors for vimdiff were created by insane clowns.  So try this
-instead:
+However the default colors for vimdiff were created by insane clowns.  So try
+this instead:
 
     ⚡ mkdir -p ~/.vim/colors/
     ⚡ wget https://github.com/kablamo/dotfiles/blob/master/links/.vim/colors/iijo.vim -O ~/tmp/iijo.vim
     ⚡ echo "colorscheme iijo" >> ~/.vimrc
 
-To quickly exit vimdiff type 'ZZ'.  To open folds type 'zo'.  To switch windows
-type 'ctl-w l' and 'ctl-w h'.  For more help with vim type ':help'.
+Then learn how to use vimdiff:
+ - To open and close folds type 'zo' and 'zo'.  
+ - To switch windows type 'ctl-w l' and 'ctl-w h'.  
+ - To quickly exit vimdiff type 'ZZ'.  
+ - For more help with vim type ':help' or ':help thingYouNeedHelpWith'.  Tab
+   completion is a good way to find the help topic you may be interested in.
 
 See also
 --------
