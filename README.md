@@ -14,7 +14,11 @@ This will place a tag named __ribbon at origin/master.  Basically we are
 bookmarking our current spot with a 'ribbon'.
 
 **Next**, pull down the latest changes made by your fellow conspirators from the
-remote repository.  To review those changes do the following:
+remote repository.  
+
+    ⚡ git pull
+
+To review those changes do the following:
 
     ⚡ git ribbon
     Eric Johnson 6 weeks ago ecf43db
@@ -23,7 +27,7 @@ remote repository.  To review those changes do the following:
 
     press 's' to skip 
 
-    Eric Johnson 6 weeks ago 9595fa0
+    Eric Johnson 4 weeks ago 9595fa0
     fix css margin class.
     root/css/networth.css
     root/css/style.less
@@ -33,7 +37,7 @@ remote repository.  To review those changes do the following:
 
     press 's' to skip 
 
-    Eric Johnson 6 weeks ago 5ef0fb2
+    Eric Johnson 2 weeks ago 5ef0fb2
     Added daysPerYear.
     lib/Networth/Controller/Calculator.pm
     lib/Networth/Out/RealCost.pm
@@ -42,7 +46,7 @@ remote repository.  To review those changes do the following:
     press 's' to skip 
 
 The script will pause when it prints "press 's' to skip".  This gives you the
-opportunity to view the diff with 'git difftool' or skip that and move on to
+opportunity to view the diff with `git difftool` or skip that and move on to
 the next revision.  
 
 **Finally**, after you have reviewed all the changes, mark your place again with:
@@ -58,7 +62,7 @@ In your .gitconfig add this:
     [diff]
         tool = vimdiff
     
-For more, read 'git help difftool' and 'git help config'.
+For more, read `git help difftool` and `git help config`.
 
 However the default colors for vimdiff were created by insane clowns.  So try
 this instead:
@@ -68,10 +72,10 @@ this instead:
     ⚡ echo "colorscheme iijo" >> ~/.vimrc
 
 Then learn how to use vimdiff:
- - To open and close folds type 'zo' and 'zo'.  
- - To switch windows type 'ctl-w l' and 'ctl-w h'.  
- - To quickly exit vimdiff type 'ZZ'.  
- - For more help with vim type ':help' or ':help thingYouNeedHelpWith'.  Tab
+ - To open and close folds type `zo` and `zo`.  
+ - To switch windows type `ctl-w l` and `ctl-w h`.  
+ - To quickly exit vimdiff type `ZZ`.  
+ - For more help with vim type `:help` or `:help thingYouNeedHelpWith`.  Tab
    completion is a good way to find the help topic you may be interested in.
 
 See also
