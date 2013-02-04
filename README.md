@@ -72,11 +72,9 @@ this instead:
     ⚡ echo "colorscheme iijo" >> ~/.vimrc
 
 Then learn how to use vimdiff:
- - To open and close folds type `zo` and `zo`.  
- - To switch windows type `ctl-w l` and `ctl-w h`.  
+ - To open and close folds type `zo` and `zo`.  For more help type `:help fold-commands`.
+ - To switch windows type `ctl-w l` and `ctl-w h`.  For more help type `:help window-move-cursor`.
  - To quickly exit vimdiff type `ZZ`.  
- - For more help with vim type `:help` or `:help thingYouNeedHelpWith`.  Tab
-   completion is a good way to find the help topic you may be interested in.
 
 See also
 --------
