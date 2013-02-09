@@ -26,7 +26,7 @@ sub save { print `git tag --force _ribbon origin/master` }
 sub ribbon {
     my $option = shift;
 
-    my @logs = `git log --pretty=format:'git difftool -r %p -r %h --no-prompt %n%C(bold white)%an %cr %h%n%s%Creset' --name-only --no-merges --reverse --topo-order _ribbon..origin/master`;
+    my @logs = `git log --pretty=format:'git difftool -r %p -r %h --no-prompt %n%C(bold white)%an %cr %h%n%s%Creset' --stat --no-merges --reverse --topo-order _ribbon..origin/master`;
 
     my $i = 0;
     while ($i < $#logs) {
