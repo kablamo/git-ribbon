@@ -4,7 +4,7 @@
 
 =head1 NAME
 
-App::git - Review the latest changes to a git repository
+App::Git::Ribbon - Review the latest changes to a git repository
 
 =head1 SYNOPSIS
 

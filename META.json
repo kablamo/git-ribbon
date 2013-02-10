@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "App-git-ribbon",
+   "name" : "App-Git-Ribbon",
    "no_index" : {
       "directory" : [
          "t",
@@ -55,13 +55,18 @@
          }
       }
    },
-   "provides" : {},
+   "provides" : {
+      "App::Git::Ribbon" : {
+         "file" : "lib/App/Git/Ribbon.pm",
+         "version" : "0.001"
+      }
+   },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
          "web" : "https://github.com/kablamo/git-ribbon/issues"
       },
-      "homepage" : "https://metacpan.org/release/App-git-ribbon",
+      "homepage" : "https://metacpan.org/release/App-Git-Ribbon",
       "repository" : {
          "type" : "git",
          "url" : "git://github.com/kablamo/git-ribbon.git",
