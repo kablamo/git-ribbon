@@ -1,4 +1,4 @@
-package App::git-ribbon;
+package App::GitRibbon;
 
 # VERSION
 
