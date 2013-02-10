@@ -6,6 +6,8 @@ use warnings;
 use Getopt::Long::Descriptive;
 use IO::Prompter;
     
+# VERSION
+# PODNAME: git-ribbon
 
 my ($option, $usage) = describe_options(
     'usage: git ribbon %o',
