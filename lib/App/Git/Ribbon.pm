@@ -127,6 +127,16 @@ Then learn how to use vimdiff:
 If you don't want to invest the time just yet to learn vim, use an alternative like meld, opendiff,
 p4merge, xxdiff, etc.  Side by side diffs are worth it!
 
+=head1 INSTALLATION
+
+L<cpanm|https://metacpan.org/module/App::cpanminus> is the standard tool the
+Perl community uses to download and install Perl libraries from the
+L<CPAN|https://metacpan.org/>.  The following should get you up and running
+quickly:
+
+    curl -L http://cpanmin.us | perl - --sudo App::cpanminus
+    cpanm App::Git::Ribbon
+
 =head1 SEE ALSO
 
 This script was inspired by a great [blog
