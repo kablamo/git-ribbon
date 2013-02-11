@@ -58,7 +58,7 @@
    "provides" : {
       "App::Git::Ribbon" : {
          "file" : "lib/App/Git/Ribbon.pm",
-         "version" : "0.002"
+         "version" : "0.003"
       }
    },
    "release_status" : "stable",
@@ -73,6 +73,6 @@
          "web" : "https://github.com/kablamo/git-ribbon"
       }
    },
-   "version" : "0.002"
+   "version" : "0.003"
 }
 
