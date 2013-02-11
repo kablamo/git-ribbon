@@ -6,6 +6,8 @@ package App::Git::Ribbon;
 
 =head1 SYNOPSIS
 
+    ⚡ git ribbon --save
+    ⚡ git pull
     ⚡ git ribbon
     Eric Johnson 6 weeks ago ecf43db
     Css tweaks.
@@ -30,6 +32,9 @@ package App::Git::Ribbon;
     root/html/calculator/realCost.tt
 
     press 's' to skip 
+
+    # The script will pause when it prints "press 's' to skip".  If you type
+    # any key other than 's', you will be shown the diff using `git difftool`.
 
 =head1 DESCRIPTION
 
@@ -41,11 +46,17 @@ The way I used to review changes was by reading through the `git log`.  I try
 to do this every morning at work to keep up with whats going on.  But I was
 having a few problems:
 
-    1. Its hard to know exactly which changes are new.
-    2. I want to review commits in the order they happened (instead of most recent first).
-    3. `git log` diff output can be hard to read and may not have enough context
-        -- sometimes I want a side by side diff like I get from `vimdiff` or `git
-    difftool`.
+=over 4
+
+=item Its hard to know exactly which changes are new.
+
+=item I want to review commits in the order they happened (instead of most recent first).
+
+=item `git log` diff output can be hard to read and may not have enough context
+-- sometimes I want a side by side diff like I get from `vimdiff` or `git
+difftool`.
+
+=back
 
 Basically I wanted a quick and easy way to review the latest changes in a way
 that feels a little more like an RSS feed.  So I wrote this script.
@@ -56,7 +67,7 @@ First mark your place with
 
     git ribbon --save
 
-This will place a tag named __ribbon at origin/master.  Basically we are
+This will place a tag named _ribbon at origin/master.  Basically we are
 bookmarking our current spot with a 'ribbon'.
 
 Next, pull down the latest changes made by your fellow conspirators from the
@@ -66,34 +77,7 @@ remote repository.
 
 To review those changes do the following:
 
-    ⚡ git ribbon
-    Eric Johnson 6 weeks ago ecf43db
-    Css tweaks.
-    root/html/calculator/realCost.tt
-
-    press 's' to skip 
-
-    Eric Johnson 4 weeks ago 9595fa0
-    fix css margin class.
-    root/css/networth.css
-    root/css/style.less
-    root/css/style.less.old
-    root/html/calculator/realCost.tt
-    root/html/fi.tt
-
-    press 's' to skip 
-
-    Eric Johnson 2 weeks ago 5ef0fb2
-    Added daysPerYear.
-    lib/Networth/Controller/Calculator.pm
-    lib/Networth/Out/RealCost.pm
-    root/html/calculator/realCost.tt
-
-    press 's' to skip 
-
-The script will pause when it prints "press 's' to skip".  This gives you the
-opportunity to view the diff with `git difftool` or skip that and move on to
-the next revision.  
+    git ribbon
 
 After you have reviewed all the changes, mark your place again with:
 
@@ -118,9 +102,15 @@ this instead:
 
 Then learn how to use vimdiff:
 
-    - To open and close folds type `zo` and `zo`.  For more help type `:help fold-commands`.
-    - To switch windows type `ctl-w l` and `ctl-w h`.  For more help type `:help window-move-cursor`.
-    - To quickly exit vimdiff type `ZZ`.  
+=over 4
+
+=item To open and close folds type `zo` and `zo`.  For more help type `:help fold-commands`.
+
+=item To switch windows type `ctl-w l` and `ctl-w h`.  For more help type `:help window-move-cursor`.
+
+=item To quickly exit vimdiff type `ZZ`.  
+
+=back
 
 =head2 Alternatives to vimdiff
 
@@ -131,7 +121,7 @@ p4merge, xxdiff, etc.  Side by side diffs are worth it!
 
 L<cpanm|https://metacpan.org/module/App::cpanminus> is the standard tool the
 Perl community uses to download and install Perl libraries from the
-L<CPAN|https://metacpan.org/>.  The following will get you up and running
+L<CPAN|https://metacpan.org/>.  The following should get you up and running
 quickly:
 
     curl -L http://cpanmin.us | perl - --sudo App::cpanminus
@@ -139,12 +129,12 @@ quickly:
 
 =head1 SEE ALSO
 
-This script was inspired by a great [blog
-post](http://gitready.com/advanced/2011/10/21/ribbon-and-catchup-reading-new-commits.html)
+This script was inspired by a great L<blog
+post|http://gitready.com/advanced/2011/10/21/ribbon-and-catchup-reading-new-commits.html>
 on gitready.com which has a number of awesome git tricks for both beginners and
 advanced users.
 
-I also ended up writing a [vim plugin](https://github.com/kablamo/vim-ribbon)
+I also ended up writing a L<vim plugin|https://github.com/kablamo/vim-ribbon>
 that is probably better user experience if you very comfortable in vim.
 
 =cut
