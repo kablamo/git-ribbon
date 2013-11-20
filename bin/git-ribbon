@@ -28,6 +28,21 @@ sub save { print `git tag --force _ribbon origin/master` }
 sub ribbon {
     my $option = shift;
 
+    if (scalar(`git tag | grep '_ribbon'`) !~ /_ribbon/ ) {
+        print q{
+First mark your place using 'git ribbon --save'.  This will place a tag named
+_ribbon at origin/master.  This basically bookmarks the our current commit with
+a 'ribbon'.
+
+Next do a 'git pull' and bring down the latest changes made by your fellow
+conspirators from the remote repository.
+
+To review those changes do a 'git ribbon'.  Then mark your place again with
+'git ribbon --save'. 
+        };
+        exit 0;
+    }
+
     my @logs = `git log --pretty=format:'git difftool -r %p -r %h --no-prompt %n%C(bold white)%an %cr %h%n%s%Creset' --stat --no-merges --reverse --topo-order _ribbon..origin/master`;
 
     my $i = 0;
