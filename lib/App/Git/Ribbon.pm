@@ -38,7 +38,7 @@ package App::Git::Ribbon;
 
 =head1 DESCRIPTION
 
-This Perl script helps you review the latest changes to a git repository.
+This Perl script helps you review the latest changes in git repository.
 
 =head1 MOTIVATION
 
